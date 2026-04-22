@@ -6,6 +6,12 @@ public class Student {
 
     // Setter
     public void setName(String name){
+        if(name.equals("\\d+")){
+            throw new IllegalArgumentException("Name must not be consist only number.");
+        }
+        if(name.equals("[\\p{L}\\s'\\-\\.]+")){
+            throw new IllegalArgumentException("Name contain invalid characters. Only letters, space, ', -, . are allowed:");
+        }
         this.name = name;
     }
     public void setGender(String gender){
