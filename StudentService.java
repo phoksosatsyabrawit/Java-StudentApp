@@ -1,4 +1,5 @@
 package studPrac01;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class StudentService {
@@ -16,8 +17,21 @@ public class StudentService {
         return students;
     }
 
-    public void print(Student students){
+    public void print(Student[] students){
         System.out.println("================== Student List ==================");
-        System.out.println("Name: " + students.getName() + "; Gender: " + students.getGender() + "; Age: " + students.getAge());
+        for(int i=0; i<students.length; i++){
+            if(students[i] != null){
+                System.out.println("Name: " + students[i].getName() + "; Gender: " + students[i].getGender() + "; Age: " + students[i].getAge() + "\n");
+            }
+        }
+    }
+
+    public Student[] createStudentArr(int n){
+        Student[] students = new Student[n];
+        StudentService studArr = new StudentService();
+        for(int i=0; i<n; i++){
+            studArr.createStudent();
+        }
+        return students;
     }
 }
