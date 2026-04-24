@@ -20,9 +20,8 @@ public class StudentService {
     public void print(Student[] students){
         System.out.println("================== Student List ==================");
         for(int i=0; i<students.length; i++){
-            if(students[i] != null){
-                System.out.println("Name: " + students[i].getName() + "; Gender: " + students[i].getGender() + "; Age: " + students[i].getAge() + "\n");
-            }
+            System.out.println("Name: " + students[i].getName() + "; Gender: " + students[i].getGender() + "; Age: " + students[i].getAge());
+            System.out.println("\n");
         }
     }
 
@@ -30,7 +29,7 @@ public class StudentService {
         Student[] students = new Student[n];
         StudentService studArr = new StudentService();
         for(int i=0; i<n; i++){
-            studArr.createStudent();
+            students[i] = studArr.createStudent();
         }
         return students;
     }
